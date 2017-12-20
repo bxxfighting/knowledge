@@ -6,6 +6,9 @@
 
 ```
 from django.db import connection
+from order.modes import Order
+from django.db.models import Count
+
 select = {'day': connection.ops.date_trunc_sql('day', 'create_time')}
 Order.objects.extra(select=select).values('day').annotate(count=Count('id'))
 ```
@@ -45,4 +48,39 @@ Order.objects.extra(select=select).values('day').annotate(count=Count('id'))
 > select count(id), DATE_FORMAT(DATE_ADD(deal_time, interval 8 hour), '%Y-%m-%d') days from order_order group by days;
 > ```
 >
-> 暂时只找到这么一种方式
+> 转成django:
+>
+> ```
+> from django.db import connection
+>
+> cursor = connection.cursor()
+> cursor.execute("select count(id), DATE_FORMAT(DATE_ADD(deal_time, interval 8 hour), '%Y-%m-%d') days from order_order group by days")
+> rows = cursor.fetchall()
+> ```
+>
+> 这样就可以取出聚合好的数据了，使用rows值来进行其它业务处理。
+>
+> 如果不使用原始SQL的方式，其实也可以采用最上面的extra，代码如下：
+>
+> ```
+> from django.db import connection
+> from order.modes import Order
+> from django.db.models import Count
+>
+> select = {'day': connection.ops.date_trunc_sql('day', 'DATE_ADD(deal_time, interval 8 hour)')}
+> Order.objects.extra(select=select).values('day').annotate(count=Count('id'))
+> ```
+>
+> 这样就可以继续按django的聚合方式来进行了。这里就是把
+>
+> ```
+> 'create_time'
+> ```
+>
+> 换成了：
+>
+> ```
+> 'DATE_ADD(deal_time, interval 8 hour)'
+> ```
+>
+> 
