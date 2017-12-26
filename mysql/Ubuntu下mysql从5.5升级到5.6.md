@@ -5,7 +5,7 @@ Ubuntu14.04下，开发环境的是mysql5.5，线上环境使用的是mysql5.6�
     ```
     wget https://repo.mysql.com//mysql-apt-config_0.8.9-1_all.deb
     ```
-    我下载时是0.8.9这个版本，[根据你下载时最新版本下载](https://dev.mysql.com/downloads/repo/apt/)
+    我下载时是0.8.9这个版本，根据你下载时最新版本下载
 2. 安装mysql-apt-config
     ```
     sudo dpkg -i mysql-apt-config_0.8.9-1_all.deb
