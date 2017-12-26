@@ -5,12 +5,12 @@ Ubuntu14.04下，开发环境的是mysql5.5，线上环境使用的是mysql5.6�
     ```
     wget https://repo.mysql.com//mysql-apt-config_0.8.9-1_all.deb
     ```
-    我下载时是0.8.9这个版本，根据你下载时最新版本下载
+    > 我下载时是0.8.9这个版本，根据你下载时最新版本下载
 2. 安装mysql-apt-config  
     ```
     sudo dpkg -i mysql-apt-config_0.8.9-1_all.deb
     ```
-    在安装过程中，会让你选择要安装的mysql版本，我选择了mysql5.6，另外两个选项我都选了 **Enabled**。
+    > 在安装过程中，会让你选择要安装的mysql版本，我选择了mysql5.6，另外两个选项我都选了 **Enabled**。
 3. 更新Ubuntu包信息  
     ```
     sudo apt-get update
@@ -19,7 +19,7 @@ Ubuntu14.04下，开发环境的是mysql5.5，线上环境使用的是mysql5.6�
     ```
     sudo apt-get install mysql-server
     ```
-    这里官网上说直接执行上面的命令就可以了，但是我的不行，下面一直报需要一些依赖等等，而且提醒需要加上 **-f** 参数:
+    > 这里官网上说直接执行上面的命令就可以了，但是我的不行，下面一直报需要一些依赖等等，而且提醒需要加上 **-f** 参数:
     ```
     sudo apt-get -f install mysql-server
     ```
