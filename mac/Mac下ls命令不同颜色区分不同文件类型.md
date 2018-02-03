@@ -45,7 +45,7 @@ alias ls='ls -G'
 这样，每次执行ls就都有颜色了，不过重启会失效。那么，现在写入到脚本中:
 
 ```
-echo 'alias ls ="ls -G"' >> ~/.bash_profile
+echo 'alias ls="ls -G"' >> ~/.bash_profile
 ```
 
 这样重启会就不用重新设置了
