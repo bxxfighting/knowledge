@@ -3,7 +3,7 @@
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 ```
 > 详细见：
-> https://github.com/pyenv/pyenv#choosing-the-python-version
+https://github.com/pyenv/pyenv#choosing-the-python-version
 
 2. 配置pyenv路径
 ```
@@ -27,7 +27,7 @@ libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
 xz-utils tk-dev
 ```
 > 详细见：
-> https://github.com/pyenv/pyenv/wiki/Common-build-problems
+https://github.com/pyenv/pyenv/wiki/Common-build-problems
 
 6. 安装新的python版本
 ```
@@ -37,13 +37,14 @@ pyenv install 3.6.4
 ```
 pyenv global 3.6.4
 ```
-到这里，我们就可以自由的切换不同的python版本了，但是还不能满足我们的需求，我们可能有时候在同一python版本下，可能会用到同一个库的不同版本，比如django1.8.6和django1.11.10，因此，还需要再安装pyenv-virtualenv
+> 到这里，我们就可以自由的切换不同的python版本了，但是还不能满足我们的需求，我们可能有时候在同一python版本下，可能会用到同一个库的不同版本，比如django1.8.6和django1.11.10，因此，还需要再安装pyenv-virtualenv
+
 8. 安装pyenv-virtualenv
 ```
 git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 ```
 > 详细见:
-> https://github.com/pyenv/pyenv-virtualenv
+https://github.com/pyenv/pyenv-virtualenv
 
 9. 配置pyenv-virtualenv
 ```
