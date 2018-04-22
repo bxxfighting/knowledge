@@ -10,6 +10,7 @@
 #include <time.h>
 
 
+// 第一种实现
 void quick_sort(int *numbers, int left, int right)
 {
     // 在排序过程中始终要有一个判断条件就是left要小于right
@@ -59,6 +60,31 @@ void quick_sort(int *numbers, int left, int right)
     }
 }
 
+// 第二种实现
+void quick_sort_v2(int *numbers, int left, int right)
+{
+    if (left < right) {
+        // 把right位置上的值记录key
+        int key = numbers[right];
+        // 记录下左侧的位置
+        int i = left;
+        // 这里就从左侧开始处理，查找比key小的值，一直往左侧放
+        for (int j = left; j < right; j ++) {
+            if (numbers[j] <= key) {
+                int tmp = numbers[i];
+                numbers[i] = numbers[j];
+                numbers[j] = tmp;
+                i ++;
+            }
+        }
+        // 当上面执行完成后，i位置左侧都是小于等于key的值，所以i位置存放key
+        numbers[right] = numbers[i];
+        numbers[i] = key;
+        quick_sort_v2(numbers, left, i - 1);
+        quick_sort_v2(numbers, i + 1, right);
+    }
+}
+
 int main(int argc, char *argv[])
 {
     int i, numbers[10] = {0};
@@ -74,6 +100,21 @@ int main(int argc, char *argv[])
     printf("\n");
 
     quick_sort(numbers, 0, 9);
+
+    for (i = 0; i < len; i ++) {
+        printf("%d ", numbers[i]);
+    }
+    printf("\n");
+
+    for (i = 0; i < len; i ++) {
+        numbers[i] = rand() % 100;
+    }
+    for (i = 0; i < len; i ++) {
+        printf("%d ", numbers[i]);
+    }
+    printf("\n");
+
+    quick_sort_v2(numbers, 0, 9);
 
     for (i = 0; i < len; i ++) {
         printf("%d ", numbers[i]);
