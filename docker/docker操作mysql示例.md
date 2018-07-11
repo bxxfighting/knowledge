@@ -30,6 +30,8 @@ sudo docker stop test
 sudo docker start test
 ```
 > 执行上面两个命令可以停止和再次运行刚才的mysql实例，同时连接上发现数据仍然存在
+> 这是因为官方提供的这个mysql镜像已经做了数据文件的映射，其实默认数据都是存在本机上的,
+> 位置在```/var/lib/docker/volumes```
 
 6. 其他操作
 > 执行```sudo docker stop test```后，再执行```sudo docker ps```是不能查看到test了，
