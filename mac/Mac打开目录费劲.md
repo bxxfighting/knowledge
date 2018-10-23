@@ -3,7 +3,7 @@
 
 ### 解决办法：
 ```
-alias diropen='open /System/Library/CoreServices/Finder.app'
+alias diropen='open /System/Library/CoreServices/Finder.app .'
 ```
 设置一个命令别名，```diropen```，这样每次在命令行执行```diropen 目录名```就可以打开指定目录了。一般我就会使用```diropen .```来打开当前目录。
 
