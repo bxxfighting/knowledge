@@ -37,3 +37,5 @@ sudo docker start test
 > 执行```sudo docker stop test```后，再执行```sudo docker ps```是不能查看到test了，
 > 因为此命令默认是查看运行的容器，执行```sudo docker ps -a```就可以查看所有容器了。
 > ```sudo docker container ls -a```和```sudo docker ps -a```效果一样。
+
+

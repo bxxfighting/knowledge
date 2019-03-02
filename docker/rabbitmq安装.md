@@ -22,4 +22,4 @@
 > 删除用户: ```rabbitmqctl delete_user xx```  
 > 更改密码: ```rabbitmqctl change_password guest newpassword```  
 > 用户列表: ```rabbitmqctl list_users```  
-> 管理页面访问: http://127.0.0.1:15672  
+> 管理页面访问: http://127.0.0.1:15672

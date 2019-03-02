@@ -6,7 +6,7 @@
 
 ```
 from django.db import connection
-from order.modes import Order
+from order.models import Order
 from django.db.models import Count
 
 select = {'day': connection.ops.date_trunc_sql('day', 'create_time')}
@@ -82,5 +82,3 @@ Order.objects.extra(select=select).values('day').annotate(count=Count('id'))
 > ```
 > 'DATE_ADD(deal_time, interval 8 hour)'
 > ```
->
-> 

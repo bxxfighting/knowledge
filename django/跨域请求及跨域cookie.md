@@ -3,6 +3,8 @@
 在项目中官网和我们App的域名buxingxing.com不一样，但是现在官网还在通过http请求到App的域名下的接口请求数据，这时就产生了跨域请求。
 
 ### 解决办法：
+使用了第三方库:  
+https://github.com/ottoyiu/django-cors-headers.git
 
 在App项目中，settings.py文件中加入如下内容：
 

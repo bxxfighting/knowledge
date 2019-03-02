@@ -7,7 +7,7 @@
 1. 创建xx用户
 
    ```
-   sudo useradd xx -m -s /bin/bash
+   sudo useradd hadoop -m -s /bin/bash
    ```
 
    > 在查看man手册里有介绍，
@@ -35,4 +35,3 @@
    ```
 
    > 现在新创建的用户就拥有了root权限
-
