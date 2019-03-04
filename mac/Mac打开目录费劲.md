@@ -3,8 +3,6 @@
 
 ### 解决办法：
 ```
-alias diropen='open /System/Library/CoreServices/Finder.app .'
+open .
 ```
-设置一个命令别名，```diropen```，这样每次在命令行执行```diropen 目录名```就可以打开指定目录了。一般我就会使用```diropen .```来打开当前目录。
-
-根据你使用的shell来决定把这句话放在哪个文件里就可以了。我用的是```zsh```，因此放在了```.zshrc```文件里。
+> 打开当前目录
