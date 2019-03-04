@@ -14,14 +14,13 @@ __init__.py  gunicorn.py  settings.py  urls.py  views.py  wsgi.py
 ```
 FROM python:3.6.8
 MAINTAINER xx 305526954@qq.com
-
-RUN mkdir /code
-WORKDIR /code
-ADD . /code/
-RUN pip install -r requirements.txt
-RUN chmod 777 /code/start.sh
+RUN mkdir /project
+WORKDIR /project
+ADD . /project
+RUN pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+RUN chmod 755 /project/start.sh
 EXPOSE 8000
-CMD ["/code/start.sh"]
+CMD ["/project/start.sh"]
 ```
 
 start.sh内容如下：
