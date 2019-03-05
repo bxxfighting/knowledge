@@ -17,6 +17,7 @@ func main() {
 
     for i := 0; i < lengths; i ++ {
         if a_site >= a_len {
+            // 这里不知道go有没有更好的合并列表的办法
             for j := b_site; j < b_len; j ++ {
                 result = append(result, b[j])
             }
