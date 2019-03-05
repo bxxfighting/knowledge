@@ -19,9 +19,7 @@ def quick_sort(numbers, left, right):
 
 
 def gen_rand_numbers(numbers_size):
-    numbers = []
-    for i in range(numbers_size):
-        numbers.append(random.randint(1, 100)) 
+    numbers = [random.randint(1, 100) for i in range(numbers_size)]
     return numbers
 
 if __name__ == "__main__":
