@@ -19,6 +19,8 @@ typedef struct dict {
 我们在使用hashtable的时候，一般都是生成hash值后，对hashtable的size取余，  
 但是这里size的取值都是2的指数，将sizemask = size - 1，  
 这样就可以通过将生成的hash值与sizemask进行与运算就可以获取到余数，比取余运算要快。  
+这里如果不理解可以自己手动计算一下，size = 8 = 0b1000, sizemask = 7 = 0b111，  
+0b111 & 0b101 = 0b101, 0b111 & 0b10111101 = 0b101。  
 ```
 typedef struct dictht {
     dictEntry **table;
