@@ -68,3 +68,6 @@ typedef struct dictEntry {
     struct dictEntry *next;
 } dictEntry;
 ```
+### 参考资料
+[redis源码dict.h](https://github.com/antirez/redis/blob/unstable/src/dict.h)  
+[redis源码dict.c](https://github.com/antirez/redis/blob/unstable/src/dict.c)  
