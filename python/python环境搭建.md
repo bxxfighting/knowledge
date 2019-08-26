@@ -71,3 +71,7 @@ pip install django==1.8.6
 ```
 pyenv deactivate
 ```
+
+### 备注
+如果在pyenv install时，下载python过慢，可以自己下载根据显示的那个链接自己下载。  
+下载后，放到如下目录```.pyenv/cache/```下，cache如果不存在，需要自己创建出来。  
