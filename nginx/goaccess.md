@@ -11,11 +11,13 @@
 time-format %H:%M:%S
 date-format %d/%b/%Y
 log-format %^ %h [%d:%t %^] %^ %^ "%r" %s %b "%^" %^ %^ "%u" %T %^
+hour-spec min
 ```
 > 先配置time-format和date-format的格式，这是必须要的，然后根据你的nginx日志  
 > 配置log-format格式，其中%d代表你上面配置的date-format，%t代表time-format，  
 > %^：忽略此值  
 > %h：客户端IP地址  
+> hour-spec min：指定将一小时划分成每十分钟一个统计数据  
 > [具体各个参数说明](https://goaccess.io/man)
 
 之后生成html
