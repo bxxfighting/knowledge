@@ -11,12 +11,12 @@ from taiji.urls import urlpatterns
 def get_all_urls():
     sub_urls = []
     for urlpattern in urlpatterns:
-        sub_urls += find_sub_urls(urlpattern)
+        sub_urls += get_sub_urls(urlpattern)
     # 这里我把所有url开头加上了斜线，如果没有这个需求可以不用
     urls = ['/' + sub_url for sub_url in sub_urls]
     return urls
 
-def find_sub_urls(urlpattern):
+def get_sub_urls(urlpattern):
     url = urlpattern.pattern.describe().replace('\'', '')
     # 如果是URLPattern，就说明到最后一层了，直接返回url就可以，但是需要返回列表结构 
     if isinstance(urlpattern, URLPattern):
@@ -24,7 +24,7 @@ def find_sub_urls(urlpattern):
     elif isinstance(urlpattern, URLResolver):
         sub_urls = []
         for p in urlpattern.url_patterns:
-            sub_urls += find_sub_urls(p)
+            sub_urls += get_sub_urls(p)
         urls = [url + sub_url for sub_url in sub_urls]
         return urls
 ```
