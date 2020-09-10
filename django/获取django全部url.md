@@ -31,3 +31,4 @@ def get_sub_urls(urlpattern):
 
 > 这里taiji是我的django项目名称，需要根据自己的项目名称来修改  
 > 最后的结果集是```['/api/v1/project/service/gitlab/tag/list/', '/api/v1/project/service/gitlab/branch/list/']```  
+> 因为我在url没有使用^、$这些符号，并且没有正则，所以可以直接拼接，如果使用了就需要一些特殊的处理  
