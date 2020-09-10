@@ -33,4 +33,4 @@ def get_sub_urls(urlpattern):
 > 最后的结果集是```['/api/v1/project/service/gitlab/tag/list/', '/api/v1/project/service/gitlab/branch/list/']```  
 > 因为我在url没有使用^、$这些符号，并且没有正则，所以可以直接拼接，如果使用了就需要一些特殊的处理  
 
-* 以上程序基于python3.6.8 && djanago2.2.13  
+* 以上程序基于python3.6.8 && django2.2.13  
