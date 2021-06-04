@@ -7,7 +7,7 @@ sudo docker pull mysql:5.7
 ```
 2. 运行mysql
 ```
-sudo docker run --name test -p 3308:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql:5.7
+sudo docker run --name test -p 3308:3306 --restart=always -e MYSQL_ROOT_PASSWORD=root -d mysql:5.7
 ```
 > 运行mysql时，--name用指定运行起来的实例名称，-p后面是将本机的3308端口映射到实例的3306端口，MYSQL_ROOT_PASSWORD指定root用户密码，-d来指定后台运行，最后指定要运行的镜像及版本。
 
