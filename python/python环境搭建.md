@@ -75,3 +75,38 @@ pyenv deactivate
 ### 备注
 如果在pyenv install时，下载python过慢，可以自己下载根据显示的那个链接自己下载。  
 下载后，放到如下目录```.pyenv/cache/```下，cache如果不存在，需要自己创建出来。  
+
+### 最新配置
+#### MAC
+.profile文件
+```
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+```
+.zshrc
+```
+source .profile
+```
+
+#### Ubuntu
+.profile
+```
+source .bashrc
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+```
